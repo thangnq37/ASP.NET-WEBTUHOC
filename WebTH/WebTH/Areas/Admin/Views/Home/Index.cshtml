@@ -1,17 +1,109 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<section class="content-header">
+    <h1>
+        Main
+        <small>các bảng</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li class="active">Admin</li>
+    </ol>
+</section>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
+<!-- Main content -->
+<section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3>150</h3>
+                    <p>Loại Bài Học</p>
+                </div>
+                <div class="icon">
+                    <i class="ion fa-500px"></i>
+                </div>
+                <a href="../LoaiBaiHoc/Index" class="small-box-footer">Chi Tiết <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+            <!-- small box -->
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                    <p>Bài Học</p>
+                </div>
+                <div class="icon">
+                    <i class="ion fa-firefox"></i>
+                </div>
+                <a href="../BaiHoc/index" class="small-box-footer">Chi Tiết <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>44</h3>
+                    <p>Users</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+                <a href="../User/Index" class="small-box-footer">Chi Tiết <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        @*<!-- ./col -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <!-- ./col -->*@
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+            <!-- small box -->
+            <div class="small-box bg-purple color-palette">
+                <div class="inner">
+                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                    <p>Bình Luận</p>
+                </div>
+                <div class="icon">
+                    <i class="ion fa-cc-diners-club"></i>
+                </div>
+                <a href="../BinhLuan/Index" class="small-box-footer">Chi Tiết <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        @*<!-- ./col -->
+            <div class="col-lg-4 col-sm-6 col-xs-12">
+                <!-- small box -->
+                <div class="small-box bg-gray-active">
+                    <div class="inner">
+                        <h3>44</h3>
+                        <p>User Registrations</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-4 col-sm-6 col-xs-12">
+                <!-- small box -->
+                <div class="small-box bg-red">
+                    <div class="inner">
+                        <h3>65</h3>
+                        <p>Unique Visitors</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-pie-graph"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->*@
     </div>
-</body>
-</html>
+</section>

@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace WebTH.Areas.Admin.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
+        [Authorize]
         // GET: Admin/Home
         public ActionResult Index()
         {
