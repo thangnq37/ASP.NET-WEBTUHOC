@@ -1,0 +1,11 @@
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\bin\Debug\Model.dll.config
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\bin\Debug\Model.dll
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\bin\Debug\Model.pdb
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\bin\Debug\EntityFramework.dll
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\bin\Debug\System.Linq.Dynamic.dll
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\bin\Debug\EntityFramework.xml
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\obj\Debug\Model.dll
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\obj\Debug\Model.pdb
