@@ -55,7 +55,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="DAO\Base.cs" />
+    <Compile Include="DAO\ModelController.cs" />
+    <Compile Include="DAO\Model\BaiHoc.cs" />
+    <Compile Include="DAO\Model\BaiHocTab.cs" />
+    <Compile Include="DAO\Model\BinhLuan.cs" />
+    <Compile Include="DAO\Model\LoaiBaiHoc.cs" />
+    <Compile Include="DAO\Model\Tab.cs" />
+    <Compile Include="DAO\Model\UserDAO.cs" />
     <Compile Include="EF\BaiHoc.cs" />
     <Compile Include="EF\BaiHocTag.cs" />
     <Compile Include="EF\BinhLuan.cs" />
@@ -72,6 +79,7 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

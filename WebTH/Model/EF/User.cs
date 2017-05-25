@@ -1,4 +1,4 @@
-namespace Model.EF
+﻿namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
@@ -11,6 +11,7 @@ namespace Model.EF
     {
         public long ID { get; set; }
 
+        [Display(Name ="Họ Tên")]
         [StringLength(50)]
         public string HoTen { get; set; }
 
@@ -23,10 +24,13 @@ namespace Model.EF
         [StringLength(50)]
         public string Email { get; set; }
 
+        [Display(Name ="Ẩn Hiện")]
         public bool? AnHien { get; set; }
 
+        [Display(Name ="Ngày Tạo")]
         public DateTime? CreatedDate { get; set; }
 
+        [Display(Name ="Tạo bởi")]
         [StringLength(50)]
         public string CreatedBy { get; set; }
 
