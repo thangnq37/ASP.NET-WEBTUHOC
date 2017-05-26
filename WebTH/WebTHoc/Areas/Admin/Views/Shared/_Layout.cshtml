@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="~/Assets/admin/plugins/colorpicker/bootstrap-colorpicker.min.css">
     <!-- Bootstrap time Picker -->
     <link rel="stylesheet" href="~/Assets/admin/plugins/timepicker/bootstrap-timepicker.min.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="~/Assets/admin/plugins/iCheck/all.css">
     <!-- Select2 -->
     <link rel="stylesheet" href="~/Assets/admin/plugins/select2/select2.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -252,7 +254,7 @@
                                     </div>
                                     <div class="pull-right">
                                         @*<a href="#" class="btn btn-default btn-flat">Sign out</a>*@
-                                        @Html.ActionLink("Đăng xuất", "Logout","Login",null,new { @class = "btn btn-default btn-flat" })
+                                        @Html.ActionLink("Đăng xuất", "Logout", "Login", null, new { @class = "btn btn-default btn-flat" })
                                     </div>
                                 </li>
                             </ul>
@@ -344,8 +346,31 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- /.content -->
+
+            <section class="content-header" style="margin-bottom: 10px;">
+                <h1>
+                    @RenderSection("Header", required: true)
+                    <small>@RenderSection("Type", required: true)</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active"></li>
+                </ol>
+            </section>
             <div class="box box-info">
-                @RenderBody()
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- /.box -->
+                            <div class="box">
+                                @RenderBody()
+                            </div>
+                            <!-- /.box -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </section>
             </div>
         </div>
         <!-- /.content-wrapper -->
@@ -543,6 +568,8 @@
     <script src="~/Assets/admin/plugins/datatables/dataTables.bootstrap.min.js"></script>
     <!-- Sparkline -->
     <script src="~/Assets/admin/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <!-- iCheck 1.0.1 -->
+    <script src="~/Assets/admin/plugins/iCheck/icheck.min.js"></script>
     <!-- jvectormap -->
     <script src="~/Assets/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
     <script src="~/Assets/admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
@@ -572,6 +599,10 @@
       $(function () {
           $(".textarea").wysihtml5();
           $(".select2").select2();
+          $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+              checkboxClass: 'icheckbox_minimal-blue',
+              radioClass: 'iradio_minimal-blue'
+          });
       });
     </script>
     @RenderSection("scripts", required: false)

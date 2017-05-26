@@ -57,11 +57,12 @@
   <ItemGroup>
     <Compile Include="DAO\Base.cs" />
     <Compile Include="DAO\ModelController.cs" />
-    <Compile Include="DAO\Model\BaiHoc.cs" />
-    <Compile Include="DAO\Model\BaiHocTab.cs" />
-    <Compile Include="DAO\Model\BinhLuan.cs" />
-    <Compile Include="DAO\Model\LoaiBaiHoc.cs" />
-    <Compile Include="DAO\Model\Tab.cs" />
+    <Compile Include="DAO\Model\BaiHocDAO.cs" />
+    <Compile Include="DAO\Model\BaiHocTabDAO.cs" />
+    <Compile Include="DAO\Model\BinhLuanDAO.cs" />
+    <Compile Include="DAO\Model\LikeDAO.cs" />
+    <Compile Include="DAO\Model\LoaiBaiHocDAO.cs" />
+    <Compile Include="DAO\Model\TabDAO.cs" />
     <Compile Include="DAO\Model\UserDAO.cs" />
     <Compile Include="EF\BaiHoc.cs" />
     <Compile Include="EF\BaiHocTag.cs" />

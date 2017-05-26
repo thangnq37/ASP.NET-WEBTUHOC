@@ -24,6 +24,6 @@
         public string BaiHocID { get; set; }
 
         [Display(Name ="Ẩn Hiện")]
-        public bool? AnHien { get; set; }
+        public bool AnHien { get; set; }
     }
 }

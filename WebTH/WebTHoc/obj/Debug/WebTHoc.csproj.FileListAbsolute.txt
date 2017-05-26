@@ -57,3 +57,4 @@ D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\WebTHoc\obj\
 D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\WebTHoc\obj\Debug\WebTHoc.pdb
 D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\WebTHoc\bin\EntityFramework.SqlServer.dll
 D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\WebTHoc\bin\EntityFramework.SqlServer.xml
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\WebTHoc\bin\System.Linq.Dynamic.dll

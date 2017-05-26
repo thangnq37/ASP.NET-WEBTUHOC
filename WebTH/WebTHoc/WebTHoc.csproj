@@ -157,8 +157,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Table\UserController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Areas\Core\CustomMembershipProvider.cs" />
     <Compile Include="Areas\Core\SessionHelper.cs" />
@@ -1102,6 +1104,9 @@
     <Content Include="Assets\admin\plugins\datatables\extensions\TableTools\Readme.md" />
     <Content Include="Assets\admin\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="Assets\admin\plugins\input-mask\phone-codes\phone-codes.json" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1131,6 +1136,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Areas\Admin\Views\Default\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

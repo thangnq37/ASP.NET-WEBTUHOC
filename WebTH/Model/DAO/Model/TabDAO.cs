@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Model
 {
-    public class BaiHoc:ModelController<Model.EF.BaiHoc>
+    public class TabDAO : ModelController<Model.EF.Tag>
     {
     }
 }

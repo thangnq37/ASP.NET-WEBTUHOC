@@ -2,16 +2,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
-<section class="content-header">
-    <h1>
-        Main
-        <small>các bảng</small>
-    </h1>
-    <ol class="breadcrumb">
-        <li class="active">Admin</li>
-    </ol>
-</section>
+@section Header{
+    Trang Admin
+}
+@section Type{
+    Menu các lớp    
+}
 
 <!-- Main content -->
 <section class="content">

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class BaiHocTag:ModelController<Model.EF.BaiHocTag>
+    public class BaiHocTagDAO:ModelController<Model.EF.BaiHocTag>
     {
     }
 }

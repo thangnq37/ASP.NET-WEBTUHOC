@@ -7,10 +7,10 @@ using System.Web.Mvc;
 namespace WebTHoc.Areas.Admin.Controllers
 {
     [Authorize]
-    public class HomeController : Controller
+    public class HomeController : BaseController<object>
     {
         // GET: Admin/Home
-        public ActionResult Index()
+        public override ActionResult Index()
         {
             return View();
         }

@@ -30,7 +30,7 @@
         public int? SoLanXem { get; set; }
 
         [Display(Name ="Ẩn Hiện")]
-        public bool? AnHien { get; set; }
+        public bool AnHien { get; set; }
 
         public int? IDLoaiBaiHoc { get; set; }
 

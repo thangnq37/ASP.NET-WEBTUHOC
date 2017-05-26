@@ -180,6 +180,11 @@ namespace WebTHoc.Areas.Admin.Core
 
         public override bool ValidateUser(string username, string password)
         {
+            throw new NotImplementedException();
+        }
+
+        public int ValidateUser1(string username, string password)
+        {
             return new UserDAO().Login(username, password);
         }
     }

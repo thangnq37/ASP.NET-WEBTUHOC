@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace Model
 {
-    public class Tab:ModelController<Model.EF.Tag>
+    public class BinhLuanDAO : ModelController<Model.EF.BinhLuan>
     {
     }
 }

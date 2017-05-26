@@ -1,0 +1,99 @@
+﻿using Model.EF;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Routing;
+using Model;
+
+namespace WebTHoc.Areas.Admin.Controllers
+{
+    public class BaseController<m> : Controller where m : class, new()
+    {
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+
+            var session = (User)Session[CommonConstants.USER_SESSION];
+            if (session == null)
+            {
+                filterContext.Result = new RedirectToRouteResult(new
+                    RouteValueDictionary(new { controller = "Login", action = "Index", Area = "Admin" }));
+            }
+            base.OnActionExecuting(filterContext);
+        }
+
+        private object GetController()
+        {
+            m t = new m();
+            if (t is LoaiBaiHoc)
+                return new LoaiBaiHocDAO();
+            else if (t is BaiHoc)
+                return new BaiHocDAO();
+            else if (t is BinhLuan)
+                return new BinhLuanDAO();
+            else if (t is BaiHocTag)
+                return new BaiHocTagDAO();
+            else if (t is Like)
+                return new LikeDAO();
+            else if (t is User)
+                return new UserDAO();
+            else
+                return new TabDAO();
+        }
+        // GET: Admin/Default
+        public virtual ActionResult Index()
+        {
+            ModelController<m> list = GetController() as ModelController<m>;
+            var ls = list.SelectAll();
+            return View(ls);
+        }
+        public virtual ActionResult Create()
+        {
+            ModelController<m> list = GetController() as ModelController<m>;
+            return View();
+        }
+        [HttpPost]
+        public virtual ActionResult Create(m lbh)
+        {
+            ModelController<m> list = GetController() as ModelController<m>;
+            list.Insert(lbh);
+            return RedirectToAction("index");
+        }
+
+        public virtual ActionResult Edit(int id)
+        {
+            ModelController<m> list = GetController() as ModelController<m>;
+            var lbh = list.SelectWhere("ID ==" + id).FirstOrDefault();
+            return View(lbh);
+        }
+        [HttpPost]
+        public virtual ActionResult Edit(m lbh)
+        {
+            ModelController<m> list = GetController() as ModelController<m>;
+
+            var a = RouteData.Values["id"];
+            var lbh1 = list.SelectWhere("ID ==" + a).FirstOrDefault();
+            list.Update(lbh, lbh1);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public virtual ActionResult Delete(int id)
+        {
+            ModelController<m> list = GetController() as ModelController<m>;
+            var a = RouteData.Values["id"];
+            var lbh1 = list.SelectWhere("ID ==" + a).FirstOrDefault();
+            list.Delete(lbh1);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public virtual ActionResult Details(int id)
+        {
+            ModelController<m> list = GetController() as ModelController<m>;
+            var a = RouteData.Values["id"];
+            var lbh1 = list.SelectWhere("ID ==" + a).FirstOrDefault();
+            return View(lbh1);
+        }
+    }
+}

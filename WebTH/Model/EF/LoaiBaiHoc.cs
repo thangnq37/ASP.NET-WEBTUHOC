@@ -25,7 +25,7 @@
         public long? IDCha { get; set; }
 
         [Display(Name ="Ẩn Hiện")]
-        public bool? AnHien { get; set; }
+        public bool AnHien { get; set; }
 
         [StringLength(250)]
         public string SeoTitle { get; set; }

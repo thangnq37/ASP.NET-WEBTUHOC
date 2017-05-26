@@ -23,24 +23,29 @@ namespace WebTHoc.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(LoginModel model)
         {
-           // var result = new UserDAO().Login(model.UserName, model.Password); ;
-            if(Membership.ValidateUser(model.UserName, model.Password) && ModelState.IsValid)
+            var result = new UserDAO().Login(model.UserName, Encryptor.MD5Hash(model.Password)); ;
+            if(result == 1 && ModelState.IsValid)
             {
                 //SessionHelper.SetSession(new UserSession() { UserName = model.UserName});
                 FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                 var userSession = new UserLogin();
-                ModelController<Model.EF.User> u = new UserDAO();
-                Model.EF.User user = u.SelectWhere("Username ==" + model.UserName).FirstOrDefault();
+                Model.EF.User user= new UserDAO().GetByID(model.UserName);
                 userSession.UserID =user.ID;
                 userSession.UserName = user.HoTen;
-
+          
                 Session.Add(CommonConstants.USER_SESSION,user);
                 return RedirectToAction("Index", "Home");
             }
-            else
+            else if(result == 0)
             {
-                ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng.");
-            }
+                ModelState.AddModelError("", "Tài khoản không tồn tại");
+            }else if(result == -1)
+            {
+                ModelState.AddModelError("", "Tài khoản bị khóa");
+            }else if(result == -2)
+                ModelState.AddModelError("", "Mật khẩu không hợp lệ");
+            else
+                ModelState.AddModelError("", "Username không hợp lệ");
             return View(model);
         }
 

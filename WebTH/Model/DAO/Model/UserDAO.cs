@@ -18,17 +18,33 @@ namespace Model
             return entity.ID;
         }
 
-        public bool Login(string userName, string passWord)
+        public int Login(string userName, string passWord)
         {
-            var result = Base.Instance.User.Count(x => x.UserName == userName && x.Password == passWord);
-            if(result > 0)
+            User result = Base.Instance.User.SingleOrDefault(x => x.UserName == userName);
+            if(result == null)
             {
-                return true;
+                return 0;//tai khoan khong ton tai
             }
             else
             {
-                return false;
+                if (result.AnHien == false)
+                {
+                    return -1; //tai khoan bi khoa
+                }
+                else
+                {
+                    if (result.Password == passWord)
+                        return 1;
+                    else
+                        return -2;// mat khau khong dung
+                }
             }
+        }
+
+        public User GetByID(string st)
+        {
+            var user = Base.Instance.User.Where(u => u.UserName == st).FirstOrDefault();
+            return user;
         }
     }
 }

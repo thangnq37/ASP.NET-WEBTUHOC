@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class LoaiBaiHoc:ModelController<Model.EF.LoaiBaiHoc>
+    public class LoaiBaiHocDAO : ModelController<Model.EF.LoaiBaiHoc>
     {
     }
 }
