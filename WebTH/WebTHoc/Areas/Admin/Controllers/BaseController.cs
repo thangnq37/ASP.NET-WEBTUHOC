@@ -14,7 +14,7 @@ namespace WebTHoc.Areas.Admin.Controllers
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
 
-            var session = (User)Session[CommonConstants.USER_SESSION];
+            var session = (UserLogin)Session[CommonConstants.USER_SESSION];
             if (session == null)
             {
                 filterContext.Result = new RedirectToRouteResult(new
@@ -53,12 +53,23 @@ namespace WebTHoc.Areas.Admin.Controllers
             ModelController<m> list = GetController() as ModelController<m>;
             return View();
         }
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         public virtual ActionResult Create(m lbh)
         {
             ModelController<m> list = GetController() as ModelController<m>;
-            list.Insert(lbh);
-            return RedirectToAction("index");
+            if (ModelState.IsValid)
+            {
+                if (list.Insert(lbh))
+                {
+                    return RedirectToAction("index");
+                }
+                else
+                {
+                    ModelState.AddModelError("","Không thể thực hiệ");
+                }
+            }
+            return View("Create");
+
         }
 
         public virtual ActionResult Edit(int id)
@@ -67,15 +78,25 @@ namespace WebTHoc.Areas.Admin.Controllers
             var lbh = list.SelectWhere("ID ==" + id).FirstOrDefault();
             return View(lbh);
         }
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         public virtual ActionResult Edit(m lbh)
         {
             ModelController<m> list = GetController() as ModelController<m>;
 
             var a = RouteData.Values["id"];
             var lbh1 = list.SelectWhere("ID ==" + a).FirstOrDefault();
-            list.Update(lbh, lbh1);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                if (list.Update(lbh, lbh1))
+                {
+                    return RedirectToAction("index");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Không thể thực hiệ");
+                }
+            }
+            return View("Edit");
         }
         [HttpGet]
         public virtual ActionResult Delete(int id)

@@ -11,10 +11,12 @@
     {
         public long ID { get; set; }
 
+        [Required(ErrorMessage ="Vui lòng nhập tên loại bài học")]
         [Display(Name ="Tên")]
         [StringLength(150)]
         public string Ten { get; set; }
         [Display(Name = "Thứ Tự")]
+        [Required]
         public int? ThuTu { get; set; }
 
         [Display(Name ="Mô Tả")]

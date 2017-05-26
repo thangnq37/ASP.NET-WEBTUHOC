@@ -23,7 +23,11 @@ namespace WebTHoc.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(LoginModel model)
         {
-            var result = new UserDAO().Login(model.UserName, Encryptor.MD5Hash(model.Password)); ;
+            var result = -3;
+            if(model.Password != null && model.UserName != null)
+            {
+                result = new UserDAO().Login(model.UserName, Encryptor.MD5Hash(model.Password));
+            }
             if(result == 1 && ModelState.IsValid)
             {
                 //SessionHelper.SetSession(new UserSession() { UserName = model.UserName});
@@ -33,7 +37,7 @@ namespace WebTHoc.Areas.Admin.Controllers
                 userSession.UserID =user.ID;
                 userSession.UserName = user.HoTen;
           
-                Session.Add(CommonConstants.USER_SESSION,user);
+                Session.Add(CommonConstants.USER_SESSION, userSession);
                 return RedirectToAction("Index", "Home");
             }
             else if(result == 0)
@@ -45,7 +49,7 @@ namespace WebTHoc.Areas.Admin.Controllers
             }else if(result == -2)
                 ModelState.AddModelError("", "Mật khẩu không hợp lệ");
             else
-                ModelState.AddModelError("", "Username không hợp lệ");
+                ModelState.AddModelError("", "Vui lòng nhập password hoặc username");
             return View(model);
         }
 
