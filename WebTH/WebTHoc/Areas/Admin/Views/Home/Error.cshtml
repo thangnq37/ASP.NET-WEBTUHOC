@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Error";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section Header{
+    Bạn Chưa Được Cấp Quyền    
+}
+@section Type{
+    Thực hiện đúng quyền.
+    }
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            404 Bạn Chưa Được Cấp Quyền
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="index"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">404 error</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="error-page">
+            <h2 class="headline text-yellow"> 404</h2>
+            <div class="error-content">
+                <h3><i class="fa fa-warning text-yellow"></i> Oops! Permission. (T_T) </h3>
+                <p>
+                    Bạn không có quyền để thực hiện tác vụ này. Hihi !!! cố gắng nhé.
+                    Bạn có thể click vào đây <a href="~/admin/">Trở về trang chủ Administator</a>.
+                </p>
+            </div>
+            <!-- /.error-content -->
+        </div>
+        <!-- /.error-page -->
+    </section>
+    <!-- /.content -->
+
+

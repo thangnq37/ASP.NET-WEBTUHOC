@@ -1,0 +1,122 @@
+﻿@model IEnumerable<Model.EF.BaiHoc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section Header{
+    Bài Học
+    }
+@section Type{
+    Danh Sách Bài Học
+    }
+
+<div class="box-header">
+    <h3 class="box-title">Danh Sách Bài Học</h3>
+</div>
+<div>
+    <p>
+        @Html.ActionLink("Thêm Bài Học", "Create","",new { @class = "btn btn-info"})
+    </p>
+</div>
+<!-- /.box-header -->
+<div class="box-body">
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TieuDe)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TomTat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UrlHinh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NoiDung)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoLanXem)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnHien)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IDLoaiBaiHoc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tags)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TieuDe)
+                    </td>
+                    <td class="limitText">
+                        @Html.DisplayFor(modelItem => item.TomTat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UrlHinh)
+                    </td>
+                    <td class="limitText">
+                        @Html.DisplayFor(modelItem => item.NoiDung)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoLanXem)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnHien)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IDLoaiBaiHoc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tags)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Sửa", "Edit", new { id = item.ID }) |
+                        @*@Html.ActionLink("Details", "Details", new { id = item.ID }) |*@
+                        @Html.ActionLink("Xóa", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TieuDe)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TomTat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UrlHinh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NoiDung)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoLanXem)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnHien)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IDLoaiBaiHoc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tags)
+                </th>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<!-- /.box-body -->

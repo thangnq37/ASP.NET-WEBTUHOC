@@ -38,9 +38,22 @@ namespace WebTHoc.Areas.Admin.Controllers
                 return new LikeDAO();
             else if (t is User)
                 return new UserDAO();
-            else
+            else if (t is Tag)
                 return new TabDAO();
+            else if (t is Credential)
+                return new CredentialDAO();
+            else if (t is Role)
+                return new RoleDAO();
+            else if (t is UserGroup)
+                return new UserGroupDAO();
+            else
+                return null;
         }
+        private string getUrl()
+        {
+            return null;
+        }
+        [Authorize]
         // GET: Admin/Default
         public virtual ActionResult Index()
         {
@@ -48,11 +61,15 @@ namespace WebTHoc.Areas.Admin.Controllers
             var ls = list.SelectAll();
             return View(ls);
         }
+        [Authorize]
+
         public virtual ActionResult Create()
         {
             ModelController<m> list = GetController() as ModelController<m>;
             return View();
         }
+        [Authorize]
+
         [HttpPost, ValidateInput(false)]
         public virtual ActionResult Create(m lbh)
         {
@@ -71,6 +88,7 @@ namespace WebTHoc.Areas.Admin.Controllers
             return View("Create");
 
         }
+        [Authorize]
 
         public virtual ActionResult Edit(int id)
         {
@@ -78,6 +96,8 @@ namespace WebTHoc.Areas.Admin.Controllers
             var lbh = list.SelectWhere("ID ==" + id).FirstOrDefault();
             return View(lbh);
         }
+        [Authorize]
+
         [HttpPost, ValidateInput(false)]
         public virtual ActionResult Edit(m lbh)
         {
@@ -98,6 +118,7 @@ namespace WebTHoc.Areas.Admin.Controllers
             }
             return View("Edit");
         }
+        [Authorize]
         [HttpGet]
         public virtual ActionResult Delete(int id)
         {
@@ -107,7 +128,7 @@ namespace WebTHoc.Areas.Admin.Controllers
             list.Delete(lbh1);
             return RedirectToAction("Index");
         }
-
+        [Authorize]
         [HttpGet]
         public virtual ActionResult Details(int id)
         {

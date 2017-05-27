@@ -1,4 +1,4 @@
-﻿namespace Model.EF
+namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
@@ -11,32 +11,24 @@
     {
         public long ID { get; set; }
 
-        [Required(ErrorMessage ="Vui lòng nhập tên loại bài học")]
-        [Display(Name ="Tên")]
         [StringLength(150)]
         public string Ten { get; set; }
-        [Display(Name = "Thứ Tự")]
-        [Required]
+
         public int? ThuTu { get; set; }
 
-        [Display(Name ="Mô Tả")]
         [Column(TypeName = "ntext")]
         public string Mota { get; set; }
 
-        [Display(Name ="ID cha")]
         public long? IDCha { get; set; }
 
-        [Display(Name ="Ẩn Hiện")]
         public bool AnHien { get; set; }
 
         [StringLength(250)]
         public string SeoTitle { get; set; }
 
-        [Display(Name ="Ngày Tạo")]
         public DateTime? CreatedDate { get; set; }
 
         [StringLength(50)]
-        [Display(Name ="Tạo Bởi")]
         public string CreatedBy { get; set; }
 
         public DateTime? ModifiedDate { get; set; }

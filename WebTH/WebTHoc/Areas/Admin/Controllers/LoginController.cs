@@ -24,9 +24,10 @@ namespace WebTHoc.Areas.Admin.Controllers
         public ActionResult Index(LoginModel model)
         {
             var result = -3;
+            var userdao = new UserDAO();
             if(model.Password != null && model.UserName != null)
             {
-                result = new UserDAO().Login(model.UserName, Encryptor.MD5Hash(model.Password));
+                result = userdao.Login(model.UserName, Encryptor.MD5Hash(model.Password), true);
             }
             if(result == 1 && ModelState.IsValid)
             {
@@ -36,7 +37,10 @@ namespace WebTHoc.Areas.Admin.Controllers
                 Model.EF.User user= new UserDAO().GetByID(model.UserName);
                 userSession.UserID =user.ID;
                 userSession.UserName = user.HoTen;
-          
+                //userSession.GroupID
+                var lsCredentials = userdao.GetListCredential(model.UserName);
+
+                Session.Add(CommonConstants.SESSION_CREDENTIALS, lsCredentials);
                 Session.Add(CommonConstants.USER_SESSION, userSession);
                 return RedirectToAction("Index", "Home");
             }
@@ -48,8 +52,8 @@ namespace WebTHoc.Areas.Admin.Controllers
                 ModelState.AddModelError("", "Tài khoản bị khóa");
             }else if(result == -2)
                 ModelState.AddModelError("", "Mật khẩu không hợp lệ");
-            else
-                ModelState.AddModelError("", "Vui lòng nhập password hoặc username");
+            else if(result == -3)
+                ModelState.AddModelError("", "Tài khoản không có quyền đăng nhập");
             return View(model);
         }
 

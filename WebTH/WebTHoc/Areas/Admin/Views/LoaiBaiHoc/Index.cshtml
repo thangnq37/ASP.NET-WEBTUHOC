@@ -6,14 +6,14 @@
 }
 
 @section header{
-    Loại bài học    
+    Loại Bài Học    
 }
 @section Type{
-    Danh sách loại bài học
+    Danh Sách Loại Bài Học
     }
 
 <div class="box-header">
-    <h3 class="box-title">Danh Sách User</h3>
+    <h3 class="box-title">Danh Sách Loại Bài Học</h3>
 </div>
 <div>
     <p>
@@ -53,8 +53,8 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.ThuTu)
                         </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Mota,new { @class = "limitText" })
+                        <td class="limitText">
+                            @Html.DisplayFor(modelItem => item.Mota)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.IDCha)

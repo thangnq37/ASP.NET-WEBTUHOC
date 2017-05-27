@@ -31,6 +31,12 @@ namespace Model
                 return Base.Instance.Tag;
             else if (m is User)
                 return Base.Instance.User;
+            else if (m is Credential)
+                return Base.Instance.Credential;
+            else if (m is UserGroup)
+                return Base.Instance.UserGroup;
+            else if (m is Role)
+                return Base.Instance.Role;
             else
                 return null;
         }

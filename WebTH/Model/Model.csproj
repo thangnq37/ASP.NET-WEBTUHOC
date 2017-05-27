@@ -55,23 +55,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="DAO\Base.cs" />
     <Compile Include="DAO\ModelController.cs" />
     <Compile Include="DAO\Model\BaiHocDAO.cs" />
     <Compile Include="DAO\Model\BaiHocTabDAO.cs" />
     <Compile Include="DAO\Model\BinhLuanDAO.cs" />
+    <Compile Include="DAO\Model\CredentialDAO.cs" />
     <Compile Include="DAO\Model\LikeDAO.cs" />
     <Compile Include="DAO\Model\LoaiBaiHocDAO.cs" />
+    <Compile Include="DAO\Model\RoleDAO.cs" />
     <Compile Include="DAO\Model\TabDAO.cs" />
     <Compile Include="DAO\Model\UserDAO.cs" />
+    <Compile Include="DAO\Model\UserGroupDAO.cs" />
     <Compile Include="EF\BaiHoc.cs" />
     <Compile Include="EF\BaiHocTag.cs" />
     <Compile Include="EF\BinhLuan.cs" />
+    <Compile Include="EF\Credential.cs" />
     <Compile Include="EF\EFWebTuHocDbContext.cs" />
     <Compile Include="EF\Like.cs" />
     <Compile Include="EF\LoaiBaiHoc.cs" />
+    <Compile Include="EF\Role.cs" />
+    <Compile Include="EF\sysdiagrams.cs" />
     <Compile Include="EF\Tag.cs" />
     <Compile Include="EF\User.cs" />
+    <Compile Include="EF\UserGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

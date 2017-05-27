@@ -159,6 +159,9 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Table\BaiHocController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Table\BinhLuanController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Table\CredentialController.cs" />
     <Compile Include="Areas\Admin\Controllers\Table\LoaiBaiHocController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\Table\UserController.cs" />
@@ -168,6 +171,7 @@
     <Compile Include="Areas\Core\UserSession.cs" />
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\Encryptor.cs" />
+    <Compile Include="Common\HasCredentialAttribute.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1055,10 +1059,15 @@
     <Content Include="Assets\admin\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\LayoutCss\my-layout.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\bg.png" />
+    <Content Include="fonts\bg2.png" />
+    <Content Include="fonts\bg3.png" />
+    <Content Include="fonts\bg5.jpg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -1619,6 +1628,16 @@
     <Content Include="Scripts\ckeditor\plugins\codesnippet\lib\highlight\LICENSE" />
     <Content Include="Scripts\ckeditor\plugins\codesnippet\lib\highlight\README.md" />
     <Content Include="Scripts\ckeditor\plugins\codesnippet\lib\highlight\README.ru.md" />
+    <Content Include="Areas\Admin\Views\BaiHoc\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BaiHoc\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\BaiHoc\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\BinhLuan\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BinhLuan\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\BinhLuan\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Error.cshtml" />
+    <Content Include="Areas\Admin\Views\Credential\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Credential\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Credential\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ckeditor\styles.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -1628,6 +1647,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\LayoutJs\my-script.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -1651,7 +1671,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Areas\Admin\Views\Default\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

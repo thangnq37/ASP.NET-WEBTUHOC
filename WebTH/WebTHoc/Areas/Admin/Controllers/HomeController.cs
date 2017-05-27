@@ -12,6 +12,12 @@ namespace WebTHoc.Areas.Admin.Controllers
         // GET: Admin/Home
         public override ActionResult Index()
         {
+            ViewData["User"]= Session[CommonConstants.USER_SESSION];
+            return View();
+        }
+
+        public ActionResult Error()
+        {
             return View();
         }
     }
