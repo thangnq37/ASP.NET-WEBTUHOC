@@ -4,26 +4,27 @@
  */
 
 CKEDITOR.editorConfig = function( config ) {
-	// Define changes to default configuration here. For example:
-	// config.language = 'fr';
-    // config.uiColor = '#AADC6E';
-    config.toolbar_Full =
-	[
-		{ name: 'document', items: ['Source', '-', 'Save', 'NewPage', 'DocProps', 'Preview', 'Print', '-', 'Templates'] },
-		{ name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'] },
-		{ name: 'editing', items: ['Find', 'Replace', '-', 'SelectAll', '-', 'SpellChecker', 'Scayt'] },
-		//{ name: 'forms', items : [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
+	config.toolbarGroups = [
+		{ name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+		{ name: 'editing', groups: [ 'spellchecker', 'editing' ] },
+		{ name: 'links', groups: [ 'links' ] },
+		{ name: 'insert', groups: [ 'insert' ] },
+		{ name: 'tools', groups: [ 'tools' ] },
+		{ name: 'document', groups: [ 'mode','doctools' ] },
+		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
 		'/',
-		{ name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'] },
-		{
-		    name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv',
-            '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl']
-		},
-		{ name: 'links', items: ['Link', 'Unlink', 'Anchor'] },
-		{ name: 'insert', items: ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe'] },
-		'/',
-		{ name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
-		{ name: 'colors', items: ['TextColor', 'BGColor'] },
-		{ name: 'tools', items: ['Maximize', 'ShowBlocks', '-', 'About', '-', 'buttonbbcode'] }
+		{ name: 'paragraph', groups: [ 'list', 'blocks', 'align', 'paragraph' ] },
+		{ name: 'styles', groups: [ 'styles' ] },
+		{ name: 'colors', groups: [ 'colors' ] },
+		{ name: 'about', groups: [ 'about' ] }
 	];
+
+	config.removeButtons = 'BidiLtr,BidiRtl,Language,Blockquote,BulletedList,NumberedList,RemoveFormat,CopyFormatting,Save,Preview,Print,Source,Maximize,ShowBlocks,Anchor,Unlink,Link,Scayt,Paste,PasteText,PasteFromWord';
+
+	// Set the most common block elements.
+	config.format_tags = 'p;h1;h2;h3;pre';
+
+	// Simplify the dialog windows.
+	config.removeDialogTabs = 'image:advanced;link:advanced';
 };
+

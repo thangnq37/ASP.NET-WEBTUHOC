@@ -81,19 +81,9 @@
     <script>
         CKEDITOR.replace('Mota', {
             uiColor: '#9AB8F3',
-            toolbarGroups: [
-                { "name": 'tools', "groups": ['Maximize', 'ShowBlocks'] },
-                { "name": "insert", "groups": ["insert"] },
-                { "name": "paragraph", "groups": ["list", "blocks"] },
-				{ "name": "links", "groups": ["links"] },
-				{ "name": "document", "groups": ["mode"] },
-				{ "name": "about", "groups": ["about"] }, '/',
-                { "name": "basicstyles", "groups": ["basicstyles"] },
-                { "name": "styles", "groups": ["styles"] },
-                { "name": "colors", "groups": ["colors"] }
-            ],
-            // Remove the redundant buttons from toolbar groups defined above.
-            removeButtons: 'About,Save',
+            extraPlugins: 'codesnippet',
+            codeSnippet_theme: 'pojoaque',
+            height: 300
         });
     </script>
 }

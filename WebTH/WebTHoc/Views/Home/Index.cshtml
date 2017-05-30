@@ -1,4 +1,7 @@
-﻿@{
+﻿@model PagedList.IPagedList<Model.EF.BaiHoc>
+@using PagedList.Mvc
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -19,151 +22,32 @@
             <div class="panel-heading">
                 <p class="text-header-label"><span class="header-label">BÀI VIẾT MỚI</span></p>
             </div>
-            <div class="main-contain-top">
+        </div>
+        @foreach (Model.EF.BaiHoc item in Model)
+        {
+
+            <div class="main-contain">
                 <div class="row">
                     <div class="container-fluid">
                         <div class="information-top">
-                            <h2><a href="index1.html" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
-                            <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
+                            <h2><a href="~/Home/DetailLession?id=@item.ID" class="text-header">@item.TieuDe</a></h2>
+                            <p class="information-content"> Tác giả:&nbsp;@item.CreatedBy  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;@item.CreatedDate &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
                         </div>
                         <div class="information-write">
                             <div class="information-write-image">
-                                <a href="#" class="information-link-image">
-                                    <img class='information-image' src="Wind.png" alt="Wind">
+                                <a href="~/Home/DetailLession?id=@item.ID" class="information-link-image">
+                                    <img class='information-image' src="@item.UrlHinh" alt="Wind">
                                 </a>
                             </div>
-                            <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
+                            <p class="information-write-content">@Html.Raw(item.TomTat)</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="main-contain">
-            <div class="row">
-                <div class="container-fluid">
-                    <div class="information-top">
-                        <h2><a href="#" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
-                        <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
-                    </div>
-                    <div class="information-write">
-                        <div class="information-write-image">
-                            <a href="#" class="information-link-image">
-                                <img class='information-image' src="Wind.png" alt="Wind">
-                            </a>
-                        </div>
-                        <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main-contain">
-            <div class="row">
-                <div class="container-fluid">
-                    <div class="information-top">
-                        <h2><a href="#" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
-                        <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
-                    </div>
-                    <div class="information-write">
-                        <div class="information-write-image">
-                            <a href="#" class="information-link-image">
-                                <img class='information-image' src="Wind.png" alt="Wind">
-                            </a>
-                        </div>
-                        <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main-contain">
-            <div class="row">
-                <div class="container-fluid">
-                    <div class="information-top">
-                        <h2><a href="#" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
-                        <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
-                    </div>
-                    <div class="information-write">
-                        <div class="information-write-image">
-                            <a href="#" class="information-link-image">
-                                <img class='information-image' src="Wind.png" alt="Wind">
-                            </a>
-                        </div>
-                        <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main-contain">
-            <div class="row">
-                <div class="container-fluid">
-                    <div class="information-top">
-                        <h2><a href="#" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
-                        <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
-                    </div>
-                    <div class="information-write">
-                        <div class="information-write-image">
-                            <a href="#" class="information-link-image">
-                                <img class='information-image' src="Wind.png" alt="Wind">
-                            </a>
-                        </div>
-                        <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main-contain">
-            <div class="row">
-                <div class="container-fluid">
-                    <div class="information-top">
-                        <h2><a href="#" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
-                        <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
-                    </div>
-                    <div class="information-write">
-                        <div class="information-write-image">
-                            <a href="#" class="information-link-image">
-                                <img class='information-image' src="Wind.png" alt="Wind">
-                            </a>
-                        </div>
-                        <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main-contain">
-            <div class="row">
-                <div class="container-fluid">
-                    <div class="information-top">
-                        <h2><a href="#" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
-                        <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
-                    </div>
-                    <div class="information-write">
-                        <div class="information-write-image">
-                            <a href="#" class="information-link-image">
-                                <img class='information-image' src="Wind.png" alt="Wind">
-                            </a>
-                        </div>
-                        <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main-contain">
-            <div class="row">
-                <div class="container-fluid">
-                    <div class="information-top">
-                        <h2><a href="#" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
-                        <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
-                    </div>
-                    <div class="information-write">
-                        <div class="information-write-image">
-                            <a href="#" class="information-link-image">
-                                <img class='information-image' src="Wind.png" alt="Wind">
-                            </a>
-                        </div>
-                        <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        }
+        @Html.PagedListPager(Model,page => Url.Action("Index", new { page }))
+        
 
 
     </div>
@@ -175,7 +59,16 @@
             <div class="panel-heading">
                 <p class="text-header-label"><span class="header-label">SERIES BÀI HỌC</span></p>
             </div>
-            <div class="panel-body">Panel Content</div>
+            <div class="panel-body">
+                <table class="table">
+                    @foreach (Model.EF.LoaiBaiHoc item in ViewData["MenuRight"] as List<Model.EF.LoaiBaiHoc>)
+                    {
+                        <tr>
+                            <td><a href="~/Home/LessionType?id=@item.ID">@item.Ten</a></td>
+                    </tr>
+                    }
+                </table>
+            </div>
         </div>
     </div>
     <!-- End Sidebar Right -->

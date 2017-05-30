@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Model.EF.BaiHoc>
+@{
+    ViewBag.Title = "LessionType";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Model.EF.LoaiBaiHoc LoaiBH = ViewData["LoaiBaiHoc"] as Model.EF.LoaiBaiHoc;
+
+}
+
+<div class="container">
+
+    <!-- Main Center -->
+    <div class="col-lg-9 col-md-8 main-center-detail">
+        <div class="panel panel-default header-panel">
+            <div class="panel-heading">
+                <p class="text-header-label"><span class="header-label">BÀI HỌC</span></p>
+            </div>
+            <div class="main-contain-top">
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="information-top">
+                            <h1 class="header-text-detail">@LoaiBH.Ten</h1>
+                            <p class="information-content"> Tác giả:&nbsp;@LoaiBH.CreatedBy  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;@LoaiBH.CreatedDate &nbsp;&nbsp;&nbsp; @*Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a>*@ </p>
+                        </div>
+                        <div class="information-write">
+                            <div>
+                                @Html.Raw(LoaiBH.Mota)
+                            </div>
+                            <div class="">
+                                <table class="table">
+                                    <thead>
+                                        <tr class="info">
+                                            <th>Mục Lục</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (Model.EF.BaiHoc item in Model)
+                                        {
+                                        
+                                            <tr>
+                                                <td><a href="~/Home/DetailLession?id=@item.ID">@item.TieuDe</a></td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Main Center -->
+    <!-- Sidebar Right -->
+    <div class="col-lg-3 col-md-4 sidebar-right">
+        <div class="panel panel-default header-panel">
+            <div class="panel-heading">
+                <p class="text-header-label"><span class="header-label">BÀI HỌC LIÊN QUAN</span></p>
+            </div>
+            <div class="panel-body">
+                
+            </div>
+        </div>
+    </div>
+    <!-- End Sidebar Right -->
+</div>
+

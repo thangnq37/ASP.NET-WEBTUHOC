@@ -15,7 +15,7 @@ namespace WebTHoc.Areas.Admin.Controllers
             ViewData["User"]= Session[CommonConstants.USER_SESSION];
             return View();
         }
-
+        
         public ActionResult Error()
         {
             return View();

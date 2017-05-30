@@ -1,0 +1,53 @@
+﻿@model Model.EF.BaiHoc
+@{
+    ViewBag.Title = "DetailLession";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Model.EF.BaiHoc> lsBaiHoc = ViewData["lsBaiHoc"] as List<Model.EF.BaiHoc>;
+}
+<div class="container">
+
+    <!-- Main Center -->
+    <div class="col-lg-9 col-md-8 main-center-detail">
+        <div class="panel panel-default header-panel">
+            <div class="panel-heading">
+                <p class="text-header-label"><span class="header-label">BÀI HỌC</span></p>
+            </div>
+            <div class="main-contain-top">
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="information-top">
+                            <h1 class="header-text-detail">@Model.TieuDe</h1>
+                            <p class="information-content"> Tác giả:&nbsp;@Model.CreatedBy  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;@Model.CreatedDate &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
+                        </div>
+                        <div class="information-write">
+                          @Html.Raw(Model.NoiDung)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Main Center -->
+    <!-- Sidebar Right -->
+    <div class="col-lg-3 col-md-4 sidebar-right">
+        <div class="panel panel-default header-panel">
+            <div class="panel-heading">
+                <p class="text-header-label"><span class="header-label">BÀI HỌC LIÊN QUAN</span></p>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    @foreach (Model.EF.BaiHoc item in ViewData["lsBaiHoc"] as List<Model.EF.BaiHoc>)
+                    {
+                        <tr>
+                            <td><a href="~/Home/DetailLession?id=@item.ID">@item.TieuDe</a></td>
+                        </tr>
+                    }
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Sidebar Right -->
+</div>
+

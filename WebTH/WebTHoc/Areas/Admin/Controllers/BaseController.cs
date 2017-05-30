@@ -53,7 +53,7 @@ namespace WebTHoc.Areas.Admin.Controllers
         {
             return null;
         }
-        [Authorize]
+        
         // GET: Admin/Default
         public virtual ActionResult Index()
         {
@@ -61,14 +61,14 @@ namespace WebTHoc.Areas.Admin.Controllers
             var ls = list.SelectAll();
             return View(ls);
         }
-        [Authorize]
+        
 
         public virtual ActionResult Create()
         {
             ModelController<m> list = GetController() as ModelController<m>;
             return View();
         }
-        [Authorize]
+        
 
         [HttpPost, ValidateInput(false)]
         public virtual ActionResult Create(m lbh)
@@ -88,7 +88,7 @@ namespace WebTHoc.Areas.Admin.Controllers
             return View("Create");
 
         }
-        [Authorize]
+        
 
         public virtual ActionResult Edit(int id)
         {
@@ -96,7 +96,7 @@ namespace WebTHoc.Areas.Admin.Controllers
             var lbh = list.SelectWhere("ID ==" + id).FirstOrDefault();
             return View(lbh);
         }
-        [Authorize]
+        
 
         [HttpPost, ValidateInput(false)]
         public virtual ActionResult Edit(m lbh)
@@ -104,6 +104,7 @@ namespace WebTHoc.Areas.Admin.Controllers
             ModelController<m> list = GetController() as ModelController<m>;
 
             var a = RouteData.Values["id"];
+
             var lbh1 = list.SelectWhere("ID ==" + a).FirstOrDefault();
             if (ModelState.IsValid)
             {
@@ -118,7 +119,7 @@ namespace WebTHoc.Areas.Admin.Controllers
             }
             return View("Edit");
         }
-        [Authorize]
+        
         [HttpGet]
         public virtual ActionResult Delete(int id)
         {
@@ -128,7 +129,7 @@ namespace WebTHoc.Areas.Admin.Controllers
             list.Delete(lbh1);
             return RedirectToAction("Index");
         }
-        [Authorize]
+        
         [HttpGet]
         public virtual ActionResult Details(int id)
         {

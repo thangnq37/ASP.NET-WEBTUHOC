@@ -41,7 +41,6 @@
     <link rel="stylesheet" href="~/Assets/admin/dist/css/skins/_all-skins.min.css">
     <link rel="stylesheet" href="~/Assets/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     @* Code sni.. *@
-    <link href="~/Scripts/ckeditor/plugins/codesnippet/lib/highlight/styles/default.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -59,7 +58,7 @@
             <!-- Logo -->
             <a href="~/Admin/Home" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>N2</b></span>
+                <span class="logo-mini"><b>Nhóm 2</b></span>
                 <!-- logo for regular state and mobile devices -->
                 <span class="logo-lg"><b>Admin N2</b></span>
             </a>
@@ -229,40 +228,36 @@
                                 @if (User != null)
                                 {
                                     @User.UserName
+                                }else
+                                {
+                                    @Html.ActionLink("Đăng nhập","Index","Login")
                                 }
                                 </span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
+
                                     <p>
-                                        Alexander Pierce - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                        Xinh chào 
+                                        @if (User != null)
+                                        {
+                                            @User.UserName
+                                        }
+                                        <small>Hôm nay: @DateTime.Now</small><br>
+                                        Chúc bạn một ngày tốt lành
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
-                                <li class="user-body">
-                                    <div class="row">
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Followers</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Sales</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Friends</a>
-                                        </div>
-                                    </div>
-                                    <!-- /.row -->
-                                </li>
+                                
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                        @*<a href="#" class="btn btn-default btn-flat">Profile</a>*@
                                     </div>
                                     <div class="pull-right">
                                         @*<a href="#" class="btn btn-default btn-flat">Sign out</a>*@
-                                        @Html.ActionLink("Đăng xuất", "Logout", "Login", null, new { @class = "btn btn-default btn-flat" })
+                                        @Html.ActionLink("Đăng xuất", "Logout", "Login", null, new { @class = "btn btn-success btn-flat" })
                                     </div>
                                 </li>
                             </ul>
@@ -309,7 +304,7 @@
                             <i class="fa fa-book"></i>
                             <span>Bài Học</span>
                             <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
+                                <i class="fa  fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
@@ -341,6 +336,19 @@
                         <ul class="treeview-menu">
                             <li><a href="~/Admin/User/Index"><i class="fa fa-circle-o text-red"></i>Danh Sách User</a></li>
                             <li><a href="~/Admin/User/Create"><i class="fa fa-circle-o text-blue"></i>Tạo Thêm User</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-user-secret"></i>
+                            <span>Cấp Quyền</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="~/Admin/Credential/Index"><i class="fa fa-circle-o text-red"></i>Danh Sách Quyền</a></li>
+                            <li><a href="~/Admin/Credential/Create"><i class="fa fa-circle-o text-blue"></i>Cấp Quyền Group</a></li>
                         </ul>
                     </li>
                     <li class="header"></li>
@@ -569,8 +577,7 @@
     <script src="~/Assets/admin/bootstrap/js/bootstrap.min.js"></script>
     <!-- FastClick -->
     <script src="~/Assets/admin/plugins/fastclick/fastclick.js"></script>
-    <!-- AdminLTE App -->
-    <script src="~/Assets/admin/dist/js/app.min.js"></script>
+
     <!-- DataTables -->
     <script src="~/Assets/admin/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="~/Assets/admin/plugins/datatables/dataTables.bootstrap.min.js"></script>
@@ -587,6 +594,10 @@
     <script src="~/Assets/admin/dist/js/demo.js"></script>
     <!-- Select2 -->
     <script src="~/Assets/admin/plugins/select2/select2.full.min.js"></script>
+    <!--Ckeditor-->!>
+    <script type="text/javascript" src="~/Scripts/ckeditor/ckeditor.js"> </script>
+    <!-- AdminLTE App -->
+    <script src="~/Assets/admin/dist/js/app.min.js"></script>
     <script>
         $(function () {
         $("#example1").DataTable();
@@ -600,10 +611,7 @@
         });
       });
     </script>
-    @*<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>*@
-    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
-    <script src="~/Scripts/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    
     <!-- Bootstrap WYSIHTML5 -->
     <script src="~/Assets/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
     <script>
@@ -619,6 +627,8 @@
           });
       });
     </script>
+    
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

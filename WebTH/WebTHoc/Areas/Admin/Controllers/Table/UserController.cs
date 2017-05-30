@@ -58,7 +58,7 @@ namespace WebTHoc.Areas.Admin.Controllers
         public override ActionResult Edit(int id)
         {
             var a = new UserDAO().SelectWhere("ID ==" + id).First();
-            ViewBag.GroupID = new SelectList(new UserGroupDAO().SelectAll(),"GroupID","GroupID",a.GroupID);
+            ViewBag.GroupID = new SelectList(new UserGroupDAO().SelectAll(),"ID","ID",a.GroupID);
             return base.Edit(id);
         }
 
@@ -86,35 +86,24 @@ namespace WebTHoc.Areas.Admin.Controllers
             {
                 if (s == -1)
                 {
-                    ModelState.AddModelError("", "Username đã có người dùng");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Email đã có người dùng");
+                    ModelState.AddModelError("", "Username hoặc Email đã có người dùng");
                 }
             }
-            return View("Edit");
-            
-            
+            return View("Edit",user);
         }
 
         private int SeeUser(User u)
         {
             var db = new UserDAO();
-            var a = Base.Instance.User.Where(x=>x.UserName==u.UserName).Count();
-            var b = Base.Instance.User.Where(x => x.Email == u.Email).Count();
-            if(a == 0 && b == 0)
+            var a = Base.Instance.User.Where(x=>x.UserName==u.UserName&&x.Email==u.Email).Count();
+            if(a == 1)
             {
                 return 1;
             }
             else
             {
-                if (a > 0)
-                    return -1;//username trung
-                else if (b > 0)
-                    return -2;//Email trung
+                return -1;
             }
-            return 0;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Model.EF;
 using System.Data.Entity;
-
+using PagedList;
 namespace Model
 {
     public abstract class ModelController<model>  where model : class, new() 
@@ -245,6 +245,8 @@ namespace Model
             return true;
         }
         #endregion
+
+
 
 
     }

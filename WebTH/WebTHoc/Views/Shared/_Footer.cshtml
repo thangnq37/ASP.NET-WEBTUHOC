@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="footer">
+    <div class="main-footer">
+        <div class="container">
+            <div class="col-lg-5">
+                <ul class="footer-lession">
+                    <li><h3>Khóa lục</h3></li>
+                    @foreach (Model.EF.LoaiBaiHoc item in ViewData["MenuList"] as List<Model.EF.LoaiBaiHoc>)
+                    {
+                        if (item.IDCha == null)
+                        {
+                            <li><a href="~/Home/Lession?id=@item.ID">Tự học @item.Ten</a></li>
+                        }
+                    }
+                </ul>
+            </div>
+            <div class="col-lg-7">
+                <ul class="footer-lession">
+                    <li><h3>Giới thiệu</h3></li>
+                    <li>
+                        <div class="image-intro">
+                            <img src="Wind.png" alt="">
+                        </div>
+                        <div>
+                            Chào mọi người nhóm mình là nhóm 3 đang thực hiện các chương trình thật tập các môn trên trường xong xong đó nhóm mình thực hiện làm website này với mục đích là làm các bài học và chia sẽ kinh nghiệm của bản thân. Chào mọi người nhóm mình là nhóm 3 đang thực hiện các chương trình thật tập các môn trên trường xong xong đó nhóm mình thực hiện làm website này với mục đích là làm các bài học và chia sẽ kinh nghiệm của bản thân. Chào mọi người nhóm mình là nhóm 3 đang thực hiện các chương trình thật tập các môn trên trường xong xong đó nhóm mình thực hiện làm website này với mục đích là làm các bài học và chia sẽ kinh nghiệm của bản thân.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            2017 Powered By ThangNQ, Theme By ThangNQ
+            <ul class="nav navbar-nav navbar-right navbar-top-right">
+                <li><a href="#" class="google"><span class="fa fa-google-plus-square"></span></a></li>
+                <li><a href="#" class="facebook"><span class="fa fa-facebook-official"></span></a></li>
+                <li><a href="#" class="youtube"><span class="fa fa-youtube"></span></a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>

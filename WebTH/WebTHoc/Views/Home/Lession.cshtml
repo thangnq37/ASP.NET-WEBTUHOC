@@ -1,0 +1,67 @@
+﻿@model PagedList.IPagedList<Model.EF.BaiHoc>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Lession";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <!-- Main Center -->
+    <div class="col-lg-9 col-md-8 main-center-detail">
+        <div class="panel panel-default header-panel">
+            <div class="panel-heading">
+                <p class="text-header-label"><span class="header-label">BÀI VIẾT MỚI</span></p>
+            </div>
+        </div>
+        @foreach(Model.EF.BaiHoc item in Model)
+        {
+            <div class="main-contain">
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="information-top">
+                            <h2><a href="~/Home/DetailLession?id=@item.ID" class="text-header">@item.TieuDe</a></h2>
+                            <p class="information-content"> Tác giả:&nbsp;@item.CreatedBy  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;@item.CreatedDate &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
+                        </div>
+                        <div class="information-write">
+                            <div class="information-write-image">
+                                <a href="#" class="information-link-image">
+                                    <img class='information-image' src="@item.UrlHinh" alt="Wind">
+                                </a>
+                            </div>
+                            <p class="information-write-content">@Html.Raw(item.TomTat)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+        @Html.PagedListPager(Model, page => Url.Action("Lession", new { page }))
+
+
+
+
+    </div>
+
+    <!-- End Main Center -->
+    <!-- Sidebar Right -->
+    <div class="col-lg-3 col-md-4 sidebar-right">
+        <div class="panel panel-default header-panel">
+            <div class="panel-heading">
+                <p class="text-header-label"><span class="header-label">SERIES BÀI HỌC</span></p>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    @foreach (Model.EF.LoaiBaiHoc item in ViewData["MenuRight"] as List<Model.EF.LoaiBaiHoc>)
+                    {
+                        <tr>
+                            <td><a href="~/Home/LessionType?id=@item.ID">@item.Ten</a></td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- End Sidebar Right -->
+
+</div>
+

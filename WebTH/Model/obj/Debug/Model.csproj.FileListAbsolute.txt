@@ -9,3 +9,7 @@ D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\bin\De
 D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\obj\Debug\Model.dll
 D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\obj\Debug\Model.pdb
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\bin\Debug\PagedList.dll
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\bin\Debug\PagedList.Mvc.dll
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\bin\Debug\PagedList.xml
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom2\ASP.NET-WEBTUHOC\WebTH\Model\bin\Debug\PagedList.Mvc.xml
