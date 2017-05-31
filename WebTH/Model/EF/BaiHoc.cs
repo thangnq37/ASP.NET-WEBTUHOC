@@ -31,8 +31,7 @@
         [Display(Name ="Hiện")]
         public bool AnHien { get; set; }
 
-        [Display(Name ="IDLoai
-            ")]
+        [Display(Name ="IDLoai")]
         public long? IDLoaiBaiHoc { get; set; }
 
         [StringLength(250)]

@@ -10,10 +10,15 @@ namespace Model
 {
     public class BaiHocDAO:ModelController<Model.EF.BaiHoc>
     {
-        public IEnumerable<Model.EF.BaiHoc> GetListPage(int page, int pageSize)
+        public IEnumerable<Model.EF.BaiHoc> GetListPage(string searchBaiHoc, int page, int pageSize)
         {
             //int nSkip = (page - 1) * pageSize;
-            return Base.Instance.BaiHoc.OrderByDescending(x=>x.ID).ToPagedList(page, pageSize);
+            IQueryable<BaiHoc> model = Base.Instance.BaiHoc.OrderByDescending(x => x.ID);
+            if (!string.IsNullOrEmpty(searchBaiHoc))
+            {
+                model = model.Where(x => x.TieuDe.Contains(searchBaiHoc) || x.Tags.Contains(searchBaiHoc));
+            }
+            return model.ToPagedList(page, pageSize);
         }
 
         public IEnumerable<Model.EF.BaiHoc> GetListPageLession(int page, int pageSize,int id)

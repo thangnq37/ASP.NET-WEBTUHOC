@@ -43,14 +43,16 @@
                         @*<a href="~/Home/Lession?id=@item.ID" style="text-decoration:none">@item.Ten</a>*@
                         <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-search"></span></a>
                         <div class="w3-dropdown-content w3-bar-block w3-border" style="margin-top:15px;margin-left:-240px">
-                            <form action="" class="navbar-form">
+                            @*<form action="" class="navbar-form">*@
+                            @using (Html.BeginForm("Index","Home", FormMethod.Get,new { @class= "navbar-form" }))
+                            {
                                 <div class="input-group">
-                                    <input type="text" class="form-control" style="width: 200px;" placeholder="Search ...">
+                                    <input type="text" class="form-control" name="searchBaiHoc" value="@ViewBag.Search" style="width: 200px;" placeholder="Search ...">
                                     <div class="input-group-btn">
                                         <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button>
                                     </div>
                                 </div>
-                            </form>
+                            }
                         </div>
                     </div>
                 </li>

@@ -11,11 +11,12 @@ namespace WebTHoc.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(int page = 1, int pageSize=10)
+        public ActionResult Index(string searchBaiHoc, int page = 1, int pageSize=10)
         {
             var lbh = new Model.LoaiBaiHocDAO();
             ViewData["MenuList"] = lbh.SelectAll();
-            var model = new BaiHocDAO().GetListPage(page, pageSize);
+            var model = new BaiHocDAO().GetListPage(searchBaiHoc, page, pageSize);
+            ViewBag.Search = searchBaiHoc;
             ViewData["MenuRight"] = lbh.SelectAll().Where(x => x.IDCha != null).ToList();
             return View(model);
         }
